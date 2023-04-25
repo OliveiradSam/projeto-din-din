@@ -2,7 +2,7 @@
 
 ### Exercicío de encerramento do Módulo 3 do curso de Desenvolvimento de Software da *Cubos Academy*
 
-## Para rodar este projeto localmente usando o npm, siga os seguintes passos:
+## Para executar este projeto localmente usando o npm, siga os seguintes passos:
 
 * Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 * Faça o download ou clone o projeto do repositório.
@@ -11,7 +11,9 @@
 * Certifique-se de ter uma conexão com o banco de dados configurada corretamente no arquivo conexao.js.
 * Execute o comando npm start para iniciar o servidor.
 * Abra o seu navegador e acesse http://localhost:3000 para visualizar a aplicação em execução.
-* Note que o número da porta pode variar dependendo da configuração do projeto. Certifique-se de verificar qual porta é usada pelo servidor ao iniciá-lo.
+* O número da porta pode variar dependendo da configuração do projeto e você pode conferir no arquivo `src/index.js`. 
+
+# Feito isso, basta seguir os seguintes passos:
 
 ## **Cadastrar usuário**
 #### `POST` `/usuario`
@@ -19,6 +21,35 @@
 Este código é responsável por cadastrar um novo usuário em um banco de dados. O cadastro é feito através de uma requisição HTTP POST com as informações do usuário no corpo da requisição.
 
 O código utiliza a biblioteca bcrypt para criptografar a senha do usuário antes de ser armazenada no banco de dados e a biblioteca jwt para gerar um token de autenticação.
+
+#### **Exemplo de requisição**
+
+```javascript
+// POST /usuario
+{
+    "nome": "Sam",
+    "email": "sam@email.com",
+    "senha": "123456"
+}
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+// HTTP Status 200 / 201 / 204
+{
+    "id": 1,
+    "nome": "Sam",
+    "email": "sam@email.com"
+}
+```
+
+```javascript
+// HTTP Status 400 / 401 / 403 / 404
+{
+     "Já existe usuário cadastrado com o e-mail informado."
+}
+```
 
 ## **Login do usuário**
 #### `POST` `/login`
