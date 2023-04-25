@@ -25,7 +25,6 @@ O código utiliza a biblioteca bcrypt para criptografar a senha do usuário ante
 #### **Exemplo de requisição**
 
 ```javascript
-// POST /usuario
 {
     "nome": "Sam",
     "email": "sam@email.com",
@@ -55,6 +54,39 @@ O código utiliza a biblioteca bcrypt para criptografar a senha do usuário ante
 #### `POST` `/login`
 
 A função realiza a autenticação de usuários através de suas credenciais. A função recebe uma requisição HTTP contendo as informações de `e-mail e senha do usuário` e, a partir desses dados, verifica se o usuário existe e se a senha informada é válida. Se a autenticação for bem sucedida, é gerado um token JWT que será utilizado nas requisições subsequentes.
+
+#### **Exemplo de requisição**
+
+```javascript
+{
+    "email": "sam@email.com",
+    "senha": "123456"
+}
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+// HTTP Status 200 / 201 / 204
+{
+    "usuario": {
+        "id": 1,
+        "nome": "Sam",
+        "email": "sam@email.com"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjIzMjQ5NjIxLCJleHAiOjE2MjMyNzg0MjF9.KLR9t7m_JQJfpuRv9_8H2-XJ92TSjKhGPxJXVfX6wBI"
+}
+```
+
+```javascript
+// HTTP Status 400 / 401 / 403 / 404
+{
+    "Usuário e/ou senha inválido(s)."
+}
+```
+
+
+
 
 
 <h3 align="left">Conecte-se comigo:</h3>
