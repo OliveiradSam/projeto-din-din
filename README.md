@@ -84,7 +84,8 @@ A função realiza a autenticação de usuários através de suas credenciais. A
     "Usuário e/ou senha inválido(s)."
 }
 ```
-
+## **Criptografar Senha**
+A função `criptografarSenha` é responsável por receber uma senha em texto plano e criptografá-la utilizando a biblioteca bcrypt.
 
 
 
