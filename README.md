@@ -2,6 +2,17 @@
 
 ### Exercicío de encerramento do Módulo 3 do curso de Desenvolvimento de Software da *Cubos Academy*
 
+## Para rodar este projeto localmente usando o npm, siga os seguintes passos:
+
+* Certifique-se de ter o Node.js e o npm instalados em sua máquina.
+* Faça o download ou clone o projeto do repositório.
+* Abra o terminal e navegue até a pasta raiz do projeto.
+* Execute o comando npm install para instalar todas as dependências do projeto.
+* Certifique-se de ter uma conexão com o banco de dados configurada corretamente no arquivo conexao.js.
+* Execute o comando npm start para iniciar o servidor.
+* Abra o seu navegador e acesse http://localhost:3000 para visualizar a aplicação em execução.
+* Note que o número da porta pode variar dependendo da configuração do projeto. Certifique-se de verificar qual porta é usada pelo servidor ao iniciá-lo.
+
 ## **Cadastrar usuário**
 #### `POST` `/usuario`
 
