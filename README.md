@@ -87,6 +87,37 @@ A função realiza a autenticação de usuários através de suas credenciais. A
 ## **Criptografar Senha**
 A função `criptografarSenha` é responsável por receber uma senha em texto plano e criptografá-la utilizando a biblioteca bcrypt.
 
+### **Detalhar usuário**
+
+#### `GET` `/usuario`
+
+Essa rota será chamada para obter os dados do perfil logado.
+
+#### **Exemplo de requisição**
+
+```javascript
+// Sem conteúdo no body
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+// HTTP Status 200 / 201 / 204
+{
+    "id": 1,
+    "nome": "Sam",
+    "email": "sam@email.com"
+}
+```
+
+```javascript
+// HTTP Status 400 / 401 / 403 / 404
+{
+    "Para acessar este recurso um token de autenticação válido deve ser enviado."
+}
+```
+
+
 
 
 
