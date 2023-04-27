@@ -18,7 +18,7 @@
 ## **Cadastrar usuário**
 #### `POST` `/usuario`
 
-Este código é responsável por cadastrar um novo usuário em um banco de dados. O cadastro é feito através de uma requisição HTTP POST com as informações do usuário no corpo da requisição.
+Esta rota é responsável por cadastrar um novo usuário em um banco de dados. O cadastro é feito através de uma requisição HTTP POST com as informações do usuário no corpo da requisição.
 
 O código utiliza a biblioteca bcrypt para criptografar a senha do usuário antes de ser armazenada no banco de dados e a biblioteca jwt para gerar um token de autenticação.
 
@@ -81,6 +81,7 @@ A função realiza a autenticação de usuários através de suas credenciais. A
 }
 ```
 ## **Criptografar Senha**
+
 A função `criptografarSenha` é responsável por receber uma senha em texto plano e criptografá-la utilizando a biblioteca bcrypt.
 
 ## **Detalhar usuário**
@@ -242,13 +243,93 @@ Esta rota é responsável pelo detalhamento de uma transação usando como parâ
 
 ```javascript
 {
-    "mensagem": "Transação não encontrada."
+    "Transação não encontrada."
 }
 ```
 
+### **Cadastrar transação para o usuário logado**
 
+#### `POST` `/transacao`
 
+Este código é responsável por cadastrar uma nova transação na aplicação. Ele recebe informações sobre a transação através do objeto req.body e o id do usuário através do objeto req.usuario.
 
+#### **Exemplo de requisição**
+
+```javascript
+{
+    "tipo": "entrada",
+    "descricao": "Salário",
+    "valor": 300000,
+    "data": "2022-03-24T15:30:00.000Z",
+    "categoria_id": 6
+}
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+{
+    "id": 3,
+    "tipo": "entrada",
+    "descricao": "Salário",
+    "valor": 300000,
+    "data": "2022-03-24T15:30:00.000Z",
+    "usuario_id": 5,
+    "categoria_id": 6,
+    "categoria_nome": "Salários",
+}
+```
+
+```javascript
+{
+   "Todos os campos obrigatórios devem ser informados."
+}
+```
+
+### **Excluir transação do usuário logado**
+
+#### `DELETE` `/transacao/:id`
+
+Este código implementa uma função para excluir uma transação específica do banco de dados.
+
+#### **Exemplo de requisição**
+
+```javascript
+// Sem conteúdo no body
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+// Sem conteúdo no corpo (body) da resposta
+```
+
+```javascript
+{
+    "Transação não encontrada."
+}
+```
+
+### **Obter extrato de transações**
+
+#### `GET` `/transacao/extrato`
+
+Este código implementa a funcionalidade de extrato de transações, que retorna para o usuário o saldo de entrada e saída das suas transações registradas no sistema.
+
+#### **Exemplo de requisição**
+
+```javascript
+// Sem conteúdo no corpo (body) da requisição
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+{
+ "entrada": 300000,
+ "saida": 15800
+}
+```
 <h3 align="left">Conecte-se comigo:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/https://www.linkedin.com/in/samuel-oliveira-45398b1a6/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/samuel-oliveira-45398b1a6/" height="30" width="40" /></a>
