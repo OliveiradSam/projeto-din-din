@@ -35,7 +35,6 @@ O código utiliza a biblioteca bcrypt para criptografar a senha do usuário ante
 #### **Exemplos de resposta**
 
 ```javascript
-// HTTP Status 200 / 201 / 204
 {
     "id": 1,
     "nome": "Sam",
@@ -44,7 +43,6 @@ O código utiliza a biblioteca bcrypt para criptografar a senha do usuário ante
 ```
 
 ```javascript
-// HTTP Status 400 / 401 / 403 / 404
 {
      "Já existe usuário cadastrado com o e-mail informado."
 }
@@ -67,7 +65,6 @@ A função realiza a autenticação de usuários através de suas credenciais. A
 #### **Exemplos de resposta**
 
 ```javascript
-// HTTP Status 200 / 201 / 204
 {
     "usuario": {
         "id": 1,
@@ -79,7 +76,6 @@ A função realiza a autenticação de usuários através de suas credenciais. A
 ```
 
 ```javascript
-// HTTP Status 400 / 401 / 403 / 404
 {
     "Usuário e/ou senha inválido(s)."
 }
@@ -87,7 +83,7 @@ A função realiza a autenticação de usuários através de suas credenciais. A
 ## **Criptografar Senha**
 A função `criptografarSenha` é responsável por receber uma senha em texto plano e criptografá-la utilizando a biblioteca bcrypt.
 
-### **Detalhar usuário**
+## **Detalhar usuário**
 
 #### `GET` `/usuario`
 
@@ -102,7 +98,6 @@ Essa rota será chamada para obter os dados do perfil logado.
 #### **Exemplos de resposta**
 
 ```javascript
-// HTTP Status 200 / 201 / 204
 {
     "id": 1,
     "nome": "Sam",
@@ -111,10 +106,68 @@ Essa rota será chamada para obter os dados do perfil logado.
 ```
 
 ```javascript
-// HTTP Status 400 / 401 / 403 / 404
 {
     "Para acessar este recurso um token de autenticação válido deve ser enviado."
 }
+```
+### **Atualizar usuário**
+
+#### `PUT` `/usuario`
+
+Esta função é responsável por atualizar as informações de um usuário cadastrado na aplicação. Recebe os dados do usuário através do corpo da requisição 
+
+#### **Exemplo de requisição**
+
+```javascript
+{
+    "nome": "Sam",
+    "email": "sam@email.com",
+    "senha": "123456"
+}
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+// Sem conteúdo no body
+```
+
+```javascript
+{
+    "O e-mail informado já está sendo utilizado por outro usuário."
+}
+```
+
+### **Listar categorias**
+
+#### `GET` `/categoria`
+
+
+Este código é responsável por listar todas as categorias cadastradas na aplicação. 
+
+#### **Exemplo de requisição**
+
+```javascript
+// Sem conteúdo no body
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+[
+    {
+        id: 1,
+        descricao: "Roupas",
+    },
+    {
+        id: 2,
+        descricao: "Mercado",
+    },
+]
+```
+
+```javascript
+[]
 ```
 
 
