@@ -170,6 +170,81 @@ Este código é responsável por listar todas as categorias cadastradas na aplic
 []
 ```
 
+# Pessoa B
+### **Listar transações do usuário logado**
+
+#### `GET` `/transacao`
+
+Este código é responsável por listar as transações realizadas pelo usuário.
+
+#### **Exemplo de requisição**
+
+```javascript
+// Sem conteúdo no body
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+[
+    {
+        id: 1,
+        tipo: "saida",
+        descricao: "Sapato amarelo",
+        valor: 15800,
+        data: "2022-03-23T15:35:00.000Z",
+        usuario_id: 5,
+        categoria_id: 4,
+        categoria_nome: "Roupas",
+    },
+    {
+        id: 3,
+        tipo: "entrada",
+        descricao: "Salário",
+        valor: 300000,
+        data: "2022-03-24T15:30:00.000Z",
+        usuario_id: 5,
+        categoria_id: 6,
+        categoria_nome: "Salários",
+    },
+]
+```
+
+```javascript
+[]
+
+### **Detalhar uma transação do usuário logado**
+
+#### `GET` `/transacao/:id`
+
+Esta rota é responsável pelo detalhamento de uma transação usando como parâmetro o `id` passado na query.
+
+#### **Exemplo de requisição**
+
+```javascript
+// Sem conteúdo no body
+```
+
+#### **Exemplos de resposta**
+
+```javascript
+{
+    "id": 2,
+    "tipo": "entrada",
+    "descricao": "Salário",
+    "valor": 300000,
+    "data": "2022-03-24T15:30:00.000Z",
+    "usuario_id": 5,
+    "categoria_id": 6,
+    "categoria_nome": "Salários",
+}
+```
+
+```javascript
+{
+    "mensagem": "Transação não encontrada."
+}
+```
 
 
 
