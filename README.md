@@ -8,7 +8,7 @@
 * Faça o download ou clone o projeto do repositório.
 * Abra o terminal e navegue até a pasta raiz do projeto.
 * Execute o comando npm install para instalar todas as dependências do projeto.
-* O arquivo `dump.sql` está disponível para que o banco de dados seja criado em qualquer aplicação, recomendo o `postgress` que foi o utilizado no desenvolvimento deste projeto
+* O arquivo `dump.sql` está disponível para que o banco de dados seja criado em qualquer aplicação, recomendo o `postgress` que foi o utilizado no desenvolvimento deste projeto.
 * Certifique-se de ter uma conexão com o banco de dados configurada corretamente no arquivo conexao.js.
 * Execute o comando npm start para iniciar o servidor.
 * Abra o seu navegador e acesse http://localhost:3000 para visualizar a aplicação em execução.
